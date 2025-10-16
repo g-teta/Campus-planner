@@ -3,7 +3,9 @@ Campus life planner is a responsive and accessible web application that helps st
 It combines smart organization, regex-powered search, and a clean dashboard — built entirely with HTML, CSS, and JavaScript.
 
 **Live demo**: http://127.0.0.1:5500/index.html 
+
 **Canva Design**: https://www.canva.com/design/DAG1_CBPZrs/M2QJ4bYG_uJi6G8nr4uePg/edit?utm_content=DAG1_CBPZrs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 **Demo video** :
 
 # Overview
