@@ -29,7 +29,7 @@ You can run this app locally or deploy it online — no installation required!
    git clone https://github.com/g-teta/campus-life-planner.git
 2. After opening the project folder, open the index.html and run it.
    This will open the website.
-Key Features
+***Key Features***
 Feature	Description
 Dashboard	Displays task statistics and a Chart.js visualization of total durations.
 Tasks List	View, sort, search, and manage tasks in a responsive table.
@@ -76,11 +76,11 @@ Keyboard navigation checks
 
 Screen reader simulation
 
-**Testing Instructions**
+***Testing Instructions***
 
 Follow these steps to verify that the app works as expected:
 
-*Functional Testing*
+**Functional Testing**
 
 1. Open index.html in your browser.
 2. Add a few tasks with different titles, dates, and durations.
@@ -111,14 +111,25 @@ LocalStorage: Persistent task and settings storage in the browser
 
 **Folder Structure**
 campus-life-planner/
+
 │
+
 ├── index.html                # Main web page
+
 │
+
 ├── style/
+
 │   ├── styles.css            # Core styling
+
 │   └── responsive.css        # Mobile-first responsiveness
+
 │
+
 ├── scripts/
+
 │   └── main.js               # JavaScript logic
+
 │
+
 └── README.md                 # Documentation
