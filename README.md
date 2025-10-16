@@ -6,7 +6,7 @@ It combines smart organization, regex-powered search, and a clean dashboard — 
 
 **Canva Design**: https://www.canva.com/design/DAG1_CBPZrs/M2QJ4bYG_uJi6G8nr4uePg/edit?utm_content=DAG1_CBPZrs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-**Demo video** :
+**Demo video** : https://youtu.be/NwcW6lW4urc
 
 # Overview
 This website helps balance coursework, deadlines, and student activities, which can be overwhelming.
