@@ -1,0 +1,92 @@
+[
+  {
+    "id": "rec_0010",
+    "title": "Finalize lab report",
+    "dueDate": "2025-11-02",
+    "duration": 180,
+    "tag": "project",
+    "createdAt": "2025-10-01T08:00:00.000Z",
+    "updatedAt": "2025-10-01T08:00:00.000Z"
+  },
+  {
+    "id": "rec_0009",
+    "title": "Group meeting",
+    "dueDate": "2025-10-18",
+    "duration": 90,
+    "tag": "meeting",
+    "createdAt": "2025-09-28T09:15:00.000Z",
+    "updatedAt": "2025-09-28T09:15:00.000Z"
+  },
+  {
+    "id": "rec_0008",
+    "title": "Math homework",
+    "dueDate": "2025-10-20",
+    "duration": 120,
+    "tag": "homework",
+    "createdAt": "2025-09-27T10:00:00.000Z",
+    "updatedAt": "2025-09-27T10:00:00.000Z"
+  },
+  {
+    "id": "rec_0007",
+    "title": "Read 5 chapters",
+    "dueDate": "2025-10-22",
+    "duration": 60,
+    "tag": "reading",
+    "createdAt": "2025-09-26T12:00:00.000Z",
+    "updatedAt": "2025-09-26T12:00:00.000Z"
+  },
+  {
+    "id": "rec_0006",
+    "title": "Doctor appointment",
+    "dueDate": "2025-10-25",
+    "duration": 30,
+    "tag": "health",
+    "createdAt": "2025-09-25T14:30:00.000Z",
+    "updatedAt": "2025-09-25T14:30:00.000Z"
+  },
+  {
+    "id": "rec_0005",
+    "title": "Project work",
+    "dueDate": "2025-10-21",
+    "duration": 150,
+    "tag": "project",
+    "createdAt": "2025-09-24T11:20:00.000Z",
+    "updatedAt": "2025-09-24T11:20:00.000Z"
+  },
+  {
+    "id": "rec_0004",
+    "title": "Coffee with peers",
+    "dueDate": "2025-10-19",
+    "duration": 30,
+    "tag": "social",
+    "createdAt": "2025-09-23T08:45:00.000Z",
+    "updatedAt": "2025-09-23T08:45:00.000Z"
+  },
+  {
+    "id": "rec_0003",
+    "title": "Study session: calculus",
+    "dueDate": "2025-10-17",
+    "duration": 120,
+    "tag": "study",
+    "createdAt": "2025-09-22T16:00:00.000Z",
+    "updatedAt": "2025-09-22T16:00:00.000Z"
+  },
+  {
+    "id": "rec_0002",
+    "title": "Practice presentation",
+    "dueDate": "2025-10-23",
+    "duration": 45,
+    "tag": "presentation",
+    "createdAt": "2025-09-21T09:30:00.000Z",
+    "updatedAt": "2025-09-21T09:30:00.000Z"
+  },
+  {
+    "id": "rec_0001",
+    "title": "Buy textbook",
+    "dueDate": "2025-10-16",
+    "duration": 20,
+    "tag": "errands",
+    "createdAt": "2025-09-20T07:00:00.000Z",
+    "updatedAt": "2025-09-20T07:00:00.000Z"
+  }
+]

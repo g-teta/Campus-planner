@@ -1,0 +1,350 @@
+/* Clean, minimal styles (merged responsive rules) */
+:root{
+  --bg: #f0f8ff;
+  --card: #fff;
+  --accent: #4facfe;
+  --muted: #666;
+  --radius: 10px;
+  --gap: 1rem;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#222;
+  padding:0 1rem;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Skip link with animation for focus */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  background: linear-gradient(135deg, #00c6ff 0%, #0073ff 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: top 0.3s, transform 0.3s;
+  font-size: 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 10px;
+  transform: scale(1.05);
+}
+
+/* Header styling with gradient background */
+header {
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  padding: 1rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* Heading styles with custom font and shadow */
+h1 {
+  margin:0;
+  font-size:1.5rem;
+  font-weight:700;
+}
+
+/* Navigation styles with hover and focus effects */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: .5rem 0 0 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: .35rem .6rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+nav a:focus, nav a:hover {
+  background: rgba(255,255,255,.12);
+}
+
+/* Main layout with subtle shadow and padding */
+main {
+  flex: 1;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+  padding: 1rem 0;
+}
+
+/* Sections with a shadow box and rounded corners */
+section {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,.06);
+}
+section h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: .5rem;
+}
+
+/* Table style with waves background pattern for visual interest */
+#tasksTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+/* Table headers with colorful gradients and hover effect */
+#tasksTable thead th {
+  text-align: left;
+  padding: .6rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 4px;
+}
+#tasksTable thead th:hover,
+#tasksTable thead th:focus {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+/* Table cells with subtle border and padding */
+#tasksTable tbody td {
+  background: #fff;
+  padding: .6rem;
+  border-top: 1px solid #f1f1f1;
+  vertical-align: middle;
+}
+
+/* Form labels and inputs styling with modern look */
+label {
+  display: block;
+  margin-top: .75rem;
+  font-weight: 600;
+}
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: .55rem;
+  border: 1.5px solid #8e44ad;
+  border-radius: 6px;
+  margin-top: .25rem;
+}
+
+/* Buttons with gradient background and hover effects */
+button {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  border: none;
+  padding: .6rem .9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+button:focus,
+button:hover {
+  transform: scale(1.02);
+}
+
+/* Error message style with animation */
+.error {
+  color: #d9534f;
+  font-weight: 700;
+  margin-top: .25rem;
+}
+
+/* Helper text style */
+small {
+  color: var(--muted);
+}
+
+/* Chart canvas style */
+#durationChart {
+  width: 100%;
+  height: 240px;
+  display: block;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* Chart sizing: control length (height) per breakpoint */
+section#dashboard .chart-wrap {
+  width: 100%;
+  display: block;
+  /* keeps chart visually contained and provides padding */
+  padding: 0.5rem 0;
+}
+
+section#dashboard canvas#durationChart {
+  width: 100% !important;
+  height: 160px !important; /* mobile / narrow default */
+  display: block;
+  border-radius: 6px;
+  background: #fff;
+  max-height: 480px;
+  transition: height 240ms ease;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  section#dashboard canvas#durationChart {
+    height: 240px !important;
+  }
+}
+
+/* Laptop / Desktop */
+@media (min-width: 1024px) {
+  section#dashboard canvas#durationChart {
+    height: 360px !important;
+  }
+}
+
+/* Responsive layout adjustments (media queries) */
+@media(min-width:600px){
+  main{ grid-template-columns: 1fr 360px; align-items:start }
+  #dashboard{ grid-column:1/-1 }
+  #addEditForm, #settingsSection{ order:0 }
+  #durationChart{ height:260px }
+}
+@media(min-width:1024px){
+  main{ grid-template-columns:2fr 420px }
+  #durationChart{ height:320px }
+  h1{ font-size:2rem }
+}
+
+section#aboutSection .about-illustration {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5rem auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* slightly smaller on very small screens */
+@media (max-width: 360px) {
+  section#aboutSection .about-illustration {
+    max-width: 140px;
+  }
+}
+
+
+@media (max-width: 599px) {
+  :root { --gap: 0.75rem; }
+
+  header { padding: 0.75rem; }
+  h1 { font-size: 1.25rem; }
+
+  main {
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+
+  /* Make table behave like cards on small screens */
+  #tasksTable thead { display: none; }
+  #tasksTable tbody tr {
+    display: block;
+    background: var(--card);
+    margin-bottom: .75rem;
+    border-radius: 8px;
+    padding: .6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.04);
+  }
+  #tasksTable tbody td {
+    display: block;
+    padding: .35rem 0;
+    border: none;
+  }
+  #tasksTable tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: .25rem;
+    font-size: .9rem;
+  }
+
+  /* Full-width touch targets */
+  button { width: 100%; padding: .9rem; }
+  input, select, textarea { font-size: 1rem; padding: .7rem; }
+
+  /* Chart height for phone */
+  section#dashboard canvas#durationChart { height: 140px !important; }
+}
+
+/* TABLET (600px - 1023px) — two-column layout: content + sidebar */
+@media (min-width: 600px) and (max-width: 1023px) {
+  :root { --gap: 1rem; }
+
+  header { padding: 1rem; }
+  h1 { font-size: 1.5rem; }
+
+  main {
+    grid-template-columns: 1fr 360px;
+    gap: var(--gap);
+    align-items: start;
+  }
+
+  /* Restore table layout */
+  #tasksTable thead { display: table-header-group; }
+  #tasksTable tbody tr { display: table-row; background: transparent; box-shadow: none; border-radius: 0; padding: 0; }
+  #tasksTable tbody td { display: table-cell; padding: .6rem; border-top: 1px solid #f1f1f1; }
+
+  /* Buttons full width in sidebar */
+  #addEditForm button, #settingsSection button { width: 100%; }
+
+  /* Chart height for tablet */
+  section#dashboard canvas#durationChart { height: 220px !important; }
+}
+
+/* LAPTOP / DESKTOP (>=1024px) — wider layout, compact controls */
+@media (min-width: 1024px) {
+  :root { --gap: 1.25rem; }
+
+  header { padding: 1.25rem 2rem; }
+  h1 { font-size: 2rem; }
+
+  main {
+    grid-template-columns: 2fr 420px;
+    gap: var(--gap);
+    align-items: start;
+  }
+
+  /* compact buttons and inline actions */
+  button { width: auto; padding: .55rem .9rem; }
+  #tasksTable tbody td { padding: .75rem; }
+
+  /* Chart height for desktop */
+  section#dashboard canvas#durationChart { height: 320px !important; }
+}
+
+/* Accessible focus outlines (visible on keyboard navigation) */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid rgba(70,130,180,0.18);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(230,126,34,0.12);
+  transition: box-shadow .15s ease, transform .08s ease;
+}
+
+/* helper to supply data-labels for mobile table rows (JS should set data-label attributes) */
+#tasksTable tbody td[data-label] {
+  position: relative;
+}

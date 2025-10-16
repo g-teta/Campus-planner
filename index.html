@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Life Planner</title>
+<link rel="stylesheet" href="/style/styles.css">
+<link rel="stylesheet" href="/style/responsive.css">
+</head>
+<body>
+<a href="#mainContent" class="skip-link">Skip to content</a>
+
+<header role="banner">
+  <h1>Campus Life Planner</h1>
+  <nav role="navigation" aria-label="Main navigation">
+    <ul>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#tasksSection">Tasks</a></li>
+      <li><a href="#addEditForm">Add/Edit Task</a></li>
+      <li><a href="#settingsSection">Settings</a></li>
+      <li><a href="#aboutSection">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="mainContent" role="main">
+  <section id="dashboard" aria-label="Dashboard statistics">
+    <h2>Dashboard</h2>
+    <div id="stats" aria-live="polite"></div>
+
+    <div class="chart-wrap">
+      <canvas id="durationChart" aria-label="Task duration chart" role="img"></canvas>
+    </div>
+  </section>
+
+  <section id="tasksSection" aria-label="Tasks list">
+    <h2>Tasks</h2>
+
+    <label for="searchInput">Search (regex):</label>
+    <input type="text" id="searchInput" aria-describedby="searchHelp" placeholder="Type regex to search tasks" />
+    <small id="searchHelp">Case-insensitive, live updates. Invalid regex handled.</small>
+
+    <div style="display:flex;gap:.5rem;margin:.5rem 0;">
+      <button id="importBtn" type="button">Import JSON</button>
+      <input id="importFile" type="file" accept="application/json" style="display:none" />
+      <button id="exportBtn" type="button">Export JSON</button>
+      <button id="clearBtn" type="button">Clear All</button>
+    </div>
+
+    <table id="tasksTable" role="grid" aria-label="Tasks list">
+      <thead>
+        <tr>
+          <th scope="col" data-sort="title" tabindex="0">Title ↕</th>
+          <th scope="col" data-sort="dueDate" tabindex="0">Due Date ↕</th>
+          <th scope="col" data-sort="duration" tabindex="0">Duration ↕</th>
+          <th scope="col" data-sort="tag" tabindex="0">Tag ↕</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="addEditForm" aria-label="Add or edit task">
+    <h2 id="formTitle">Add Task</h2>
+    <form id="taskForm" novalidate>
+      <input type="hidden" id="taskId" />
+      <label for="titleInput">Title</label>
+      <input id="titleInput" name="title" type="text" required />
+      <div id="titleError" class="error" aria-live="polite"></div>
+
+      <label for="dueDateInput">Due Date</label>
+      <input id="dueDateInput" name="dueDate" type="date" required />
+      <div id="dueDateError" class="error" aria-live="polite"></div>
+
+      <label for="durationInput">Duration (minutes)</label>
+      <input id="durationInput" name="duration" type="number" min="1" required />
+      <div id="durationError" class="error" aria-live="polite"></div>
+
+      <label for="tagInput">Tag</label>
+      <input id="tagInput" name="tag" type="text" required />
+      <div id="tagError" class="error" aria-live="polite"></div>
+
+      <div style="margin-top:.5rem;">
+        <button type="submit">Save</button>
+        <button id="cancelBtn" type="button">Cancel</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="settingsSection" aria-label="Settings">
+    <h2>Settings</h2>
+    <form id="settingsForm" novalidate>
+      <label for="durationUnitSelect">Duration units</label>
+      <select id="durationUnitSelect" name="durationUnit">
+        <option value="minutes">Minutes</option>
+        <option value="hours">Hours</option>
+      </select>
+
+      <label for="tagPresetsInput">Tag presets (comma-separated)</label>
+      <input id="tagPresetsInput" name="tagPresets" type="text" />
+
+      <div style="margin-top:.5rem;">
+        <button type="submit">Save settings</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="aboutSection" aria-label="About">
+    <h2>About</h2>
+    <p>This Campus Life Planner app helps students manage tasks and events with durations and tags. Designed with accessibility and responsive design in mind.</p>
+    <p>Contact: <a href="mailto:g.teta5@alustudent.com">g.teta5@alustudent.com</a> | <a href="https://github.com/g-teta" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <p>&copy; 2025 Campus Life Planner</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="scripts/main.js"></script>
+</body>
+</html>
